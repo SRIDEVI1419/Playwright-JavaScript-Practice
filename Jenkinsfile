@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
                 echo 'Downloading project from GitHub'
@@ -16,13 +17,11 @@ pipeline {
             }
         }
 
-        
-stage('Install Dependencies') {
-    steps {
-        bat 'npm ci'
-        bat 'npx playwright install chromium firefox webkit'
-    }
-}
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm ci'
+                bat 'npx playwright install chromium firefox webkit'
+            }
         }
 
         stage('Run Playwright Tests') {

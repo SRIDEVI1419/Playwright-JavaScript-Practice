@@ -6,6 +6,7 @@ test('SwagTest',async ({page})=> {
     page.pause();
     await page.locator('//input[@id="password"]').fill('secret_sauce');
     await page.locator('//input[@id="login-button"]').click();
+    
 
 })
 
